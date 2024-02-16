@@ -84,18 +84,18 @@ jobs:
     inputs:
       targetType: filePath
       filePath: ./images.CI/linux-and-win/build-image.ps1
-      arguments: -ClientId $(CLIENT_ID) `
-                 -ClientSecret $(CLIENT_SECRET) `
-                 -TemplatePath $(TemplatePath) `
+      arguments: -ClientId "$(CLIENT_ID)" `
+                 -ClientSecret "$(CLIENT_SECRET)" `
+                 -TemplatePath "$(TemplatePath)" `
                  -ImageName "$(ManagedImageName)" `
-                 -ImageResourceGroupName $(AZURE_RESOURCE_GROUP) `
+                 -ImageResourceGroupName "$(AZURE_RESOURCE_GROUP)" `
                  -TempResourceGroupName "$(TempResourceGroupName)" `
-                 -SubscriptionId $(AZURE_SUBSCRIPTION) `
-                 -TenantId $(AZURE_TENANT) `
-                 -Location $(AZURE_LOCATION) `
-                 -VirtualNetworkName $(BUILD_AGENT_VNET_NAME) `
-                 -VirtualNetworkRG $(BUILD_AGENT_VNET_RESOURCE_GROUP) `
-                 -VirtualNetworkSubnet $(BUILD_AGENT_SUBNET_NAME)
+                 -SubscriptionId "$(AZURE_SUBSCRIPTION)" `
+                 -TenantId "$(AZURE_TENANT)" `
+                 -Location "$(AZURE_LOCATION)" `
+                 -VirtualNetworkName "$(BUILD_AGENT_VNET_NAME)" `
+                 -VirtualNetworkRG "$(BUILD_AGENT_VNET_RESOURCE_GROUP)" `
+                 -VirtualNetworkSubnet "$(BUILD_AGENT_SUBNET_NAME)"
 
     env:
       PACKER_LOG: 1
