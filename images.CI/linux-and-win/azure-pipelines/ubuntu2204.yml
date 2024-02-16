@@ -13,9 +13,15 @@ pr:
     include:
     - main
 
+# add agent_pool variable
+variables:
+- name: agent_pool
+  value: "Azure Pipelines"
+
 jobs:
 - template: image-generation.yml
   parameters:
     image_type: ubuntu2204
     image_readme_name: Ubuntu2204-Readme.md
     image_template_name: ubuntu-22.04.pkr.hcl
+    agent_pool: ${{ variables.agent_pool }}
