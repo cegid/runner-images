@@ -13,9 +13,16 @@ pr:
     include:
     - main
 
+# add agent_pool variable
+variables:
+- name: agent_pool
+  value: "Azure Pipelines"
+
 jobs:
 - template: image-generation.yml
   parameters:
     image_type: windows2022
     image_readme_name: Windows2022-Readme.md
     image_template_name: windows-2022.pkr.hcl
+    agent_pool: ${{ variables.agent_pool }}
+

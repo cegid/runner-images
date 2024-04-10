@@ -19,7 +19,7 @@ parameters:
     type: string
 
   - name: agent_pool
-    type: object
+    type: string
     default:
       name: 'ci-agent-pool'
 
