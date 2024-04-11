@@ -17,6 +17,8 @@ pr:
 variables:
 - name: agent_pool
   value: "Azure Pipelines"
+- name: create_release
+  value: false
 
 jobs:
 - template: image-generation.yml
@@ -25,4 +27,5 @@ jobs:
     image_readme_name: Windows2022-Readme.md
     image_template_name: windows-2022.pkr.hcl
     agent_pool: ${{ variables.agent_pool }}
+    create_release: ${{ variables.create_release }}
 
